@@ -25,7 +25,7 @@ public class Triangle { //поля
         if (value > 0) {
             a = value;
         } else {
-            System.out.println("The data is incorrect. There are no tringles with negative side or with zero side.");
+            System.out.println("Error! The data is incorrect. There are no tringles with negative side or with zero side.");
         }
     }
 
@@ -37,7 +37,7 @@ public class Triangle { //поля
         if (value > 0) {
             b = value;
         } else {
-            System.out.println("The data is incorrect. There are no tringles with negative side or with zero side.");
+            System.out.println("Error! The data is incorrect. There are no tringles with negative side or with zero side.");
         }
     }
 
