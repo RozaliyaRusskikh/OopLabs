@@ -2,7 +2,7 @@ package OOP;
 
 import static java.lang.Math.*;
 
-public class Triangle { //поля
+public class Triangle extends GeometricFigure { //поля
     private int a;
     private int b;
     private int c;
@@ -64,24 +64,29 @@ public class Triangle { //поля
 
     }
 
-    public void showSides() { //метод вывода сторон на экран
+    @Override
+    public void printFigure() { //метод вывода сторон на экран
         System.out.printf("Triangle sides are %d, %d, %d%n", getA(), getB(), getC());
     }
 
-    private int calculatePerimeter() { //метод вычисления периметра
+    @Override
+    public int calculatePerimeter() { //метод вычисления периметра
         return getA() + getB() + getC();
     }
 
+    @Override
     public void showPerimeter(String text) { //метод вывода периметра
         int tmpPerimeter = calculatePerimeter();
         System.out.printf("Perimeter of " + text + " is %d%n", tmpPerimeter);
     }
 
-    private double calculateSquare() { //метод вычисления площади
+    @Override
+    public double calculateSquare() { //метод вычисления площади
         double halfPerimeter = (double) ((getA() + getB() + getC()) / 2);
         return sqrt(halfPerimeter * (halfPerimeter - getA()) * (halfPerimeter - getB()) * (halfPerimeter - getC()));
     }
 
+    @Override
     public void showSquare(String text) { //метод вывода площади
         double tmpSquare = calculateSquare();
         System.out.printf("Square of " + text + " is %.1f%n", tmpSquare);
