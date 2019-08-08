@@ -63,7 +63,7 @@ public class Main {
         figureArray[0] = instance1;
         figureArray[1] = instance2;
         figureArray[2] = instance3;
-        figureArray[3] = instance4;
+        figureArray[3] = instanceSquare1;
         for (GeometricFigure item : figureArray) System.out.println(item);
         //endregion
         System.out.println("Java collections:");

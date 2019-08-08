@@ -66,7 +66,7 @@ public class Rectangle extends Quadrilateral implements Comparable<Rectangle> {
 
     @Override // переопределение метода toString
     public String toString() {
-        return getA() + " " + getB() + getC() + " " + getD();
+        return getA() + " " + getB() +  " " + getC() + " " + getD();
     }
 
     @Override

@@ -60,6 +60,6 @@ public class Square extends Quadrilateral {
 
     @Override // переопределение метода toString
     public String toString() {
-        return getA() + " " + getB() + getC() + " " + getD();
+        return getA() + " " + getB() +  " " + getC() + " " + getD();
     }
 }
