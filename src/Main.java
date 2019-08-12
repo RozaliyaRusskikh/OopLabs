@@ -7,6 +7,11 @@ public class Main {
     public static void main(String[] args) {
         Triangle instance1 = new Triangle(3, 4, 5);
         Triangle instance2 = new Triangle(6, 4, 5);
+
+       /* Triangle triangle1 = new Triangle(10,5,5);
+        System.out.println(triangle1.getA());
+       */
+
         instance1.printFigure("instance1");
         System.out.println("Size of instance 1 is " + instance1.getSize());
         instance1.setSize(Size.SMALL); // проверка работы enum для разных классов
@@ -59,12 +64,14 @@ public class Main {
         System.out.println(" ");
 
         //region Geometric figure class array with objects of different classes
-        GeometricFigure figureArray[] = new GeometricFigure[4];
-        figureArray[0] = instance1;
-        figureArray[1] = instance2;
-        figureArray[2] = instance3;
-        figureArray[3] = instanceSquare1;
-        for (GeometricFigure item : figureArray) System.out.println(item);
+        {
+            GeometricFigure figureArray[] = new GeometricFigure[4];
+            figureArray[0] = instance1;
+            figureArray[1] = instance2;
+            figureArray[2] = instance3;
+            figureArray[3] = instanceSquare1;
+            for (GeometricFigure item : figureArray) System.out.println(item);
+        }
         //endregion
         System.out.println("Java collections:");
         //region ArrayList
@@ -97,7 +104,8 @@ public class Main {
         LinkedList<Rectangle> rectanglesLinkedList = new LinkedList<>(); // создание LinkedList
         rectanglesLinkedList.addFirst(instance3);
         rectanglesLinkedList.addLast(instance4);
-        /* for (Rectangle rectangle : rectangles) System.out.println(rectangle);*/
+        //Я что -то сломал((
+        //for (Rectangle rectangle : rectangles) System.out.println(rectangle);
         // вывод на экран с помощью итератора
         Iterator<Rectangle> iterator = rectanglesLinkedList.iterator();
         while ((iterator.hasNext())) {

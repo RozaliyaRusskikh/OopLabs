@@ -7,6 +7,11 @@ import static java.lang.Math.sqrt;
 public class Rectangle extends Quadrilateral implements Comparable<Rectangle> {
 
     public Rectangle(int a, int b) { //конструктор с параметрами
+        /*
+        * 1. a = b  это квадрат частный случай прямогугольника
+        * 2. При таком задании все значения получаться a =0, b=0, c=0.
+        * 3. Нужно дойти до обработки ошибок
+        * */
         if (a != b) {
             super.setA(a);
             super.setB(b);
@@ -20,7 +25,7 @@ public class Rectangle extends Quadrilateral implements Comparable<Rectangle> {
 
     @Override
     public void printFigure(String text) { //метод вывода сторон на экран
-        System.out.printf("Rectangle sides of " + text + " are %d, %d, %d, %d%n", getA(), getB(), getC(), getD());
+        System.out.printf("Rectangle sides of %s are %d, %d, %d, %d%n", text, getA(), getB(), getC(), getD());
     }
 
     @Override
@@ -31,7 +36,7 @@ public class Rectangle extends Quadrilateral implements Comparable<Rectangle> {
     @Override
     public void showPerimeter(String text) { //метод вывода периметра
         int tmpPerimeter = calculatePerimeter();
-        System.out.printf("Perimeter of " + text + " is %d%n", tmpPerimeter);
+        System.out.printf("Perimeter of %s is %d%n",text ,tmpPerimeter);
     }
 
 
@@ -43,7 +48,7 @@ public class Rectangle extends Quadrilateral implements Comparable<Rectangle> {
     @Override
     public void showSquare(String text) { //метод вывода площади
         double tmpSquare = calculateSquare();
-        System.out.printf("Square of " + text + " is %.1f%n", tmpSquare);
+        System.out.printf("Square of %s is %.1f%n", text, tmpSquare);
     }
 
     @Override
@@ -66,18 +71,20 @@ public class Rectangle extends Quadrilateral implements Comparable<Rectangle> {
 
     @Override // переопределение метода toString
     public String toString() {
-        return getA() + " " + getB() +  " " + getC() + " " + getD();
+        return getA() + " " + getB() + " " + getC() + " " + getD();
     }
 
     @Override
     public int compareTo(Rectangle o) {// сравнение по стороне A
+
         if (this.getA() > o.getA()) {
             return 1;
-        } else if (this.getA() < o.getA()) {
-            return -1;
-        } else {
-            return 0;
         }
+
+        if (this.getA() < o.getA()) {
+            return -1;
+        }
+        return 0;
     }
 
     public Rectangle clone() throws CloneNotSupportedException {

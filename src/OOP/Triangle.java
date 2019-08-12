@@ -63,17 +63,19 @@ public class Triangle extends GeometricFigure implements Comparable<Triangle>, C
 
     public Boolean getExist() //свойство, позволяющее установить, существует ли треугольник с данными длинами сторон(доступное только для чтения).
     {
-
+        //This is an equivalent entry.
+        return getA() + getB() > getC() && getA() + getC() > getB() && getB() + getC() > getA();
+        /*
         if (getA() + getB() > getC() && getA() + getC() > getB() && getB() + getC() > getA()) {
             return true;
         } else {
             return false;
-        }
+        }*/
     }
 
     @Override
     public void printFigure(String text) { //метод вывода сторон на экран
-        System.out.printf("Triangle sides of " + text + " are %d, %d, %d%n", getA(), getB(), getC());
+        System.out.printf("Triangle sides of %s are %d, %d, %d%n",text , getA(), getB(), getC());
     }
 
     @Override
@@ -84,7 +86,7 @@ public class Triangle extends GeometricFigure implements Comparable<Triangle>, C
     @Override
     public void showPerimeter(String text) { //метод вывода периметра
         int tmpPerimeter = calculatePerimeter();
-        System.out.printf("Perimeter of " + text + " is %d%n", tmpPerimeter);
+        System.out.printf("Perimeter of %s is %d%n",text , tmpPerimeter);
     }
 
     @Override
@@ -96,7 +98,7 @@ public class Triangle extends GeometricFigure implements Comparable<Triangle>, C
     @Override
     public void showSquare(String text) { //метод вывода площади
         double tmpSquare = calculateSquare();
-        System.out.printf("Square of " + text + " is %.1f%n", tmpSquare);
+        System.out.printf("Square of %s is %.1f%n",text , tmpSquare);
     }
 
     @Override // переопределение метода Equals

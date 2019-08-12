@@ -2,7 +2,7 @@ package OOP;
 
 public enum Size {
     VERY_SMALL("XS"), SMALL("S"), AVERAGE("M"),
-    BIG("L"), VERY_BIG("XL"), UNDERFINED("");
+    BIG("L"), VERY_BIG("XL"), UNDEFINED("");
 
     Size(String abbreviation) {
 

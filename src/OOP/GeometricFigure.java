@@ -1,7 +1,7 @@
 package OOP;
 
 public abstract class GeometricFigure {
-    private Size size = Size.UNDERFINED;
+    private Size size = Size.UNDEFINED;
 
     public abstract int calculatePerimeter();
 
